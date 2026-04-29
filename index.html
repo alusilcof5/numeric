@@ -1,0 +1,551 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Conjuntos Numéricos — Matemática</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Syne:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="./style.css">
+</head>
+<body>
+
+<nav aria-label="Navegación principal">
+  <div class="nav-brand">Conjuntos Numéricos</div>
+  <ul class="nav-links">
+    <li><a href="#naturales"    class="nav-link"><span class="nav-dot" style="background:var(--N)"></span>ℕ</a></li>
+    <li><a href="#enteros"      class="nav-link"><span class="nav-dot" style="background:var(--Z)"></span>ℤ</a></li>
+    <li><a href="#racionales"   class="nav-link"><span class="nav-dot" style="background:var(--Q)"></span>ℚ</a></li>
+    <li><a href="#irracionales" class="nav-link"><span class="nav-dot" style="background:var(--I)"></span>𝕀</a></li>
+    <li><a href="#reales"       class="nav-link"><span class="nav-dot" style="background:var(--R)"></span>ℝ</a></li>
+    <li><a href="#diagrama"     class="nav-link">Diagrama</a></li>
+    <li><a href="#ejercicios"   class="nav-link">Ejercicios</a></li>
+  </ul>
+</nav>
+
+<header class="hero">
+  <div class="hero-grid"></div>
+  <div class="hero-glow"></div>
+  <div class="hero-eyebrow">Matemáticas — Secundaria</div>
+  <h1>Los Conjuntos<br><em>Numéricos</em></h1>
+  <p class="hero-desc">De los números para contar hasta los irracionales que llenan la recta real. Un recorrido visual, claro y sin tecnicismos innecesarios.</p>
+  <div class="hero-sets">
+    <a href="#naturales"    class="hero-set hs-N">ℕ Naturales</a>
+    <a href="#enteros"      class="hero-set hs-Z">ℤ Enteros</a>
+    <a href="#racionales"   class="hero-set hs-Q">ℚ Racionales</a>
+    <a href="#irracionales" class="hero-set hs-I">𝕀 Irracionales</a>
+    <a href="#reales"       class="hero-set hs-R">ℝ Reales</a>
+  </div>
+</header>
+
+<!-- ═══ NATURALES ═══ -->
+<section class="set-section" id="naturales">
+<div class="container">
+  <div class="set-header">
+    <div class="set-icon-wrap" style="background:var(--Nl); border-color:var(--Nb)">
+      <span class="set-icon" style="color:var(--N)">ℕ</span>
+    </div>
+    <div>
+      <div class="set-number">00 — Naturales</div>
+      <h2 class="set-title">Números Naturales</h2>
+      <p class="set-subtitle">Los primeros números que aprendemos. Surgen de contar cosas del mundo real.</p>
+    </div>
+  </div>
+
+  <div class="content-grid">
+    <div class="card">
+      <div class="card-label" style="color:var(--N)">Definición</div>
+      <h4>El conjunto ℕ</h4>
+      <p>Números enteros positivos, incluyendo el cero en la mayoría de definiciones modernas. Sin parte decimal ni negativos.</p>
+      <div class="formula-block" style="color:var(--N); border-left-color:var(--N)">ℕ = { 0, 1, 2, 3, 4, 5, 6, ... }</div>
+      <div class="info-box" style="background:var(--Nl); border-left-color:var(--N); color:var(--N)">
+        Son infinitos por la derecha: siempre hay un número mayor.
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-label" style="color:var(--N)">Ejemplos</div>
+      <h4>En la vida cotidiana</h4>
+      <p>Los usamos para contar personas, objetos, días del mes, posiciones en una lista…</p>
+      <div class="chip-row">
+        <span class="chip" style="color:var(--N); border-color:var(--Nb); background:var(--Nl)">0</span>
+        <span class="chip" style="color:var(--N); border-color:var(--Nb); background:var(--Nl)">1</span>
+        <span class="chip" style="color:var(--N); border-color:var(--Nb); background:var(--Nl)">7</span>
+        <span class="chip" style="color:var(--N); border-color:var(--Nb); background:var(--Nl)">100</span>
+        <span class="chip" style="color:var(--N); border-color:var(--Nb); background:var(--Nl)">1.000.000</span>
+      </div>
+      <p style="margin-top:0.75rem; font-size:0.82rem">No son naturales: −3, 1/2, 2.5, √2</p>
+    </div>
+
+    <div class="card">
+      <div class="card-label" style="color:var(--N)">Operaciones</div>
+      <h4>¿Qué podemos hacer?</h4>
+      <div class="acc">
+        <button class="acc-btn" onclick="toggleAcc(this)">Suma y producto — siempre cerrados <span class="acc-chevron">&#8964;</span></button>
+        <div class="acc-body">3 + 5 = 8 (natural). 4 × 7 = 28 (natural).
+El resultado siempre pertenece a ℕ.</div>
+      </div>
+      <div class="acc">
+        <button class="acc-btn" onclick="toggleAcc(this)">Resta — a veces sale de ℕ <span class="acc-chevron">&#8964;</span></button>
+        <div class="acc-body">5 − 3 = 2  ✓ (natural)
+3 − 5 = −2 ✗ — ya no es natural.
+Por eso necesitamos ampliar a ℤ.</div>
+      </div>
+      <div class="acc">
+        <button class="acc-btn" onclick="toggleAcc(this)">División — a veces sale de ℕ <span class="acc-chevron">&#8964;</span></button>
+        <div class="acc-body">8 ÷ 4 = 2 ✓
+7 ÷ 2 = 3.5 — no es natural.
+Para esto necesitamos ℚ.</div>
+      </div>
+    </div>
+  </div>
+</div>
+</section>
+
+<!-- ═══ ENTEROS ═══ -->
+<section class="set-section" id="enteros">
+<div class="container">
+  <div class="set-header">
+    <div class="set-icon-wrap" style="background:var(--Zl); border-color:var(--Zb)">
+      <span class="set-icon" style="color:var(--Z)">ℤ</span>
+    </div>
+    <div>
+      <div class="set-number">01 — Enteros</div>
+      <h2 class="set-title">Números Enteros</h2>
+      <p class="set-subtitle">Extendemos los naturales hacia el lado negativo. Incluyen temperaturas, deudas, altitudes bajo el mar.</p>
+    </div>
+  </div>
+
+  <div class="number-line-wrap" aria-label="Recta numérica de enteros">
+    <svg viewBox="0 0 540 80" xmlns="http://www.w3.org/2000/svg" role="img">
+      <line x1="20" y1="40" x2="520" y2="40" stroke="#2A2B24" stroke-width="1.5"/>
+      <polygon points="520,36 530,40 520,44" fill="#2A2B24"/>
+      <polygon points="20,36 10,40 20,44" fill="#2A2B24"/>
+      <g font-family="JetBrains Mono, monospace" font-size="12" text-anchor="middle">
+        <g><line x1="66"  y1="33" x2="66"  y2="47" stroke="#F87171" stroke-width="1.5"/>
+           <text x="66"  y="63" fill="#F87171">−5</text></g>
+        <g><line x1="114" y1="33" x2="114" y2="47" stroke="#F87171" stroke-width="1.5"/>
+           <text x="114" y="63" fill="#F87171">−4</text></g>
+        <g><line x1="162" y1="33" x2="162" y2="47" stroke="#4A9EFF" stroke-width="1.5"/>
+           <text x="162" y="63" fill="#4A9EFF">−3</text></g>
+        <g><line x1="210" y1="33" x2="210" y2="47" stroke="#4A9EFF" stroke-width="1.5"/>
+           <text x="210" y="63" fill="#4A9EFF">−2</text></g>
+        <g><line x1="258" y1="33" x2="258" y2="47" stroke="#4A9EFF" stroke-width="1.5"/>
+           <text x="258" y="63" fill="#4A9EFF">−1</text></g>
+        <g><circle cx="306" cy="40" r="5" fill="#E8A020"/>
+           <text x="306" y="63" fill="#E8A020" font-weight="600">0</text></g>
+        <g><circle cx="354" cy="40" r="4" fill="#E8A020"/>
+           <text x="354" y="63" fill="#E8A020">1</text></g>
+        <g><circle cx="402" cy="40" r="4" fill="#E8A020"/>
+           <text x="402" y="63" fill="#E8A020">2</text></g>
+        <g><circle cx="450" cy="40" r="4" fill="#E8A020"/>
+           <text x="450" y="63" fill="#E8A020">3</text></g>
+      </g>
+      <text x="190" y="18" font-family="Syne, sans-serif" font-size="9.5" fill="#4A9EFF" font-weight="700" letter-spacing="0.08em" text-anchor="middle" text-transform="uppercase">NEGATIVOS (nuevos en ℤ)</text>
+      <text x="400" y="18" font-family="Syne, sans-serif" font-size="9.5" fill="#E8A020" font-weight="700" letter-spacing="0.08em" text-anchor="middle">YA EN ℕ</text>
+    </svg>
+  </div>
+
+  <div class="content-grid">
+    <div class="card">
+      <div class="card-label" style="color:var(--Z)">Definición</div>
+      <h4>El conjunto ℤ</h4>
+      <p>ℕ ampliado con los negativos. <strong style="color:var(--text)">ℕ está incluido en ℤ</strong>: todo natural es entero.</p>
+      <div class="formula-block" style="color:var(--Z); border-left-color:var(--Z)">ℤ = { ..., −3, −2, −1, 0, 1, 2, 3, ... }</div>
+      <div class="info-box" style="background:var(--Zl); border-left-color:var(--Z); color:var(--Z)">
+        ℕ ⊂ ℤ — todo natural es entero, pero no al revés.
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-label" style="color:var(--Z)">Usos reales</div>
+      <h4>¿Para qué sirven los negativos?</h4>
+      <div class="chip-row">
+        <span class="chip" style="color:var(--Z); border-color:var(--Zb); background:var(--Zl)">−15°C</span>
+        <span class="chip" style="color:var(--Z); border-color:var(--Zb); background:var(--Zl)">Piso −2</span>
+        <span class="chip" style="color:var(--Z); border-color:var(--Zb); background:var(--Zl)">Deuda −200€</span>
+        <span class="chip" style="color:var(--Z); border-color:var(--Zb); background:var(--Zl)">−3200m altitud</span>
+      </div>
+      <div class="acc" style="margin-top:0.75rem">
+        <button class="acc-btn" onclick="toggleAcc(this)">Regla de signos en producto <span class="acc-chevron">&#8964;</span></button>
+        <div class="acc-body">(+) × (+) = (+)  →  3 × 4 = 12
+(−) × (−) = (+)  →  (−3)(−4) = 12
+(+) × (−) = (−)  →  3 × (−4) = −12
+
+Mismo signo: positivo. Distinto: negativo.</div>
+      </div>
+      <div class="acc">
+        <button class="acc-btn" onclick="toggleAcc(this)">Valor absoluto |n| <span class="acc-chevron">&#8964;</span></button>
+        <div class="acc-body">Distancia de n al cero. Siempre positivo.
+|−7| = 7    |4| = 4    |0| = 0</div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-label" style="color:var(--Z)">Ahora sí: la resta</div>
+      <h4>Resta siempre posible en ℤ</h4>
+      <p>Restar es sumar el opuesto:</p>
+      <div class="formula-block" style="color:var(--Z); border-left-color:var(--Z)">3 − 8  = 3 + (−8) = −5
+−4 − (−2) = −4 + 2 = −2</div>
+      <div class="info-box" style="background:var(--Zl); border-left-color:var(--Z); color:var(--Z)">
+        ℤ sigue sin cerrar en división: (−7) ÷ 2 = −3.5
+      </div>
+    </div>
+  </div>
+</div>
+</section>
+
+<!-- ═══ RACIONALES ═══ -->
+<section class="set-section" id="racionales">
+<div class="container">
+  <div class="set-header">
+    <div class="set-icon-wrap" style="background:var(--Ql); border-color:var(--Qb)">
+      <span class="set-icon" style="color:var(--Q)">ℚ</span>
+    </div>
+    <div>
+      <div class="set-number">02 — Racionales</div>
+      <h2 class="set-title">Números Racionales</h2>
+      <p class="set-subtitle">Fracciones y decimales exactos o periódicos. Cualquier número que pueda escribirse como p/q con q ≠ 0.</p>
+    </div>
+  </div>
+
+  <div class="content-grid">
+    <div class="card">
+      <div class="card-label" style="color:var(--Q)">Definición</div>
+      <h4>El conjunto ℚ</h4>
+      <p>Todo número expresable como cociente de dos enteros, con denominador distinto de cero.</p>
+      <div class="formula-block" style="color:var(--Q); border-left-color:var(--Q)">ℚ = { p/q | p, q ∈ ℤ, q ≠ 0 }</div>
+      <div class="chip-row">
+        <span class="chip" style="color:var(--Q); border-color:var(--Qb); background:var(--Ql)">1/2</span>
+        <span class="chip" style="color:var(--Q); border-color:var(--Qb); background:var(--Ql)">−3/4</span>
+        <span class="chip" style="color:var(--Q); border-color:var(--Qb); background:var(--Ql)">0.75</span>
+        <span class="chip" style="color:var(--Q); border-color:var(--Qb); background:var(--Ql)">0.333…</span>
+        <span class="chip" style="color:var(--Q); border-color:var(--Qb); background:var(--Ql)">7</span>
+      </div>
+      <div class="info-box" style="background:var(--Ql); border-left-color:var(--Q); color:var(--Q)">
+        Todo entero es racional: 7 = 7/1. ℕ ⊂ ℤ ⊂ ℚ.
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-label" style="color:var(--Q)">Decimales racionales</div>
+      <h4>Exactos y periódicos</h4>
+      <p>Todo racional tiene expansión decimal que termina o que se repite con un período fijo:</p>
+      <div class="formula-block" style="color:var(--Q); border-left-color:var(--Q)">1/4 = 0.25       (exacto)
+1/3 = 0.333...   (puro)
+1/6 = 0.1666...  (mixto)
+5/7 = 0.714285714285...</div>
+      <div class="acc">
+        <button class="acc-btn" onclick="toggleAcc(this)">¿Cómo saber si es exacto? <span class="acc-chevron">&#8964;</span></button>
+        <div class="acc-body">Si el denominador simplificado solo tiene
+factores 2 y/o 5, el decimal es exacto.
+
+1/8  → denom = 2³      → exacto: 0.125
+1/6  → denom = 2×3     → periódico: 0.1666...</div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-label" style="color:var(--Q)">Operaciones con fracciones</div>
+      <h4>Suma, resta, producto y cociente</h4>
+      <div class="acc">
+        <button class="acc-btn" onclick="toggleAcc(this)">Sumar fracciones <span class="acc-chevron">&#8964;</span></button>
+        <div class="acc-body">1. Busca el mcm de los denominadores.
+2. Amplifica cada fracción.
+3. Suma solo los numeradores.
+
+1/4 + 2/6 → mcm(4,6) = 12
+= 3/12 + 4/12 = 7/12</div>
+      </div>
+      <div class="acc">
+        <button class="acc-btn" onclick="toggleAcc(this)">Multiplicar fracciones <span class="acc-chevron">&#8964;</span></button>
+        <div class="acc-body">Numerador × numerador, denominador × denominador.
+3/4 × 2/5 = 6/20 = 3/10</div>
+      </div>
+      <div class="acc">
+        <button class="acc-btn" onclick="toggleAcc(this)">Dividir fracciones <span class="acc-chevron">&#8964;</span></button>
+        <div class="acc-body">Multiplica por la inversa del divisor.
+3/4 ÷ 2/5 = 3/4 × 5/2 = 15/8</div>
+      </div>
+      <div class="info-box" style="background:var(--Ql); border-left-color:var(--Q); color:var(--Q); margin-top:0.5rem">
+        ℚ está cerrado en las 4 operaciones (÷0 excluido siempre).
+      </div>
+    </div>
+  </div>
+</div>
+</section>
+
+<!-- ═══ IRRACIONALES ═══ -->
+<section class="set-section" id="irracionales">
+<div class="container">
+  <div class="set-header">
+    <div class="set-icon-wrap" style="background:var(--Il); border-color:var(--Ib)">
+      <span class="set-icon" style="color:var(--I); font-size:1.6rem">𝕀</span>
+    </div>
+    <div>
+      <div class="set-number">03 — Irracionales</div>
+      <h2 class="set-title">Números Irracionales</h2>
+      <p class="set-subtitle">No pueden expresarse como fracción. Su decimal no termina ni se repite. Ejemplos: √2, π, e.</p>
+    </div>
+  </div>
+
+  <div class="content-grid">
+    <div class="card">
+      <div class="card-label" style="color:var(--I)">Definición</div>
+      <h4>¿Qué es un irracional?</h4>
+      <p>Un número real que NO puede expresarse como p/q. Su expansión decimal es <strong style="color:var(--text)">infinita y no periódica</strong>.</p>
+      <div class="formula-block" style="color:var(--I); border-left-color:var(--I)">√2 = 1.41421356237...
+π  = 3.14159265358...
+e  = 2.71828182845...
+√3 = 1.73205080756...</div>
+    </div>
+
+    <div class="card">
+      <div class="card-label" style="color:var(--I)">Raíces y cuadrados perfectos</div>
+      <h4>Cuándo una raíz es irracional</h4>
+      <p>La raíz cuadrada de n es racional solo si n es un cuadrado perfecto.</p>
+      <div class="chip-row">
+        <span class="chip" style="color:var(--I); border-color:var(--Ib); background:var(--Il)">√4 = 2 ✓</span>
+        <span class="chip" style="color:var(--I); border-color:var(--Ib); background:var(--Il)">√9 = 3 ✓</span>
+        <span class="chip" style="color:var(--R); border-color:var(--Rb); background:var(--Rl)">√2 ≈ 1.414… ✗</span>
+        <span class="chip" style="color:var(--R); border-color:var(--Rb); background:var(--Rl)">√5 ≈ 2.236… ✗</span>
+      </div>
+      <div class="acc" style="margin-top:0.75rem">
+        <button class="acc-btn" onclick="toggleAcc(this)">Simplificar radicales <span class="acc-chevron">&#8964;</span></button>
+        <div class="acc-body">Busca factores cuadrados perfectos:
+
+√12 = √(4×3)  = 2√3
+√50 = √(25×2) = 5√2
+√72 = √(36×2) = 6√2</div>
+      </div>
+      <div class="acc">
+        <button class="acc-btn" onclick="toggleAcc(this)">Suma de irracionales semejantes <span class="acc-chevron">&#8964;</span></button>
+        <div class="acc-body">Solo se suman si tienen el mismo radical:
+
+3√2 + 5√2 = 8√2  ✓
+√3 + √2   — no simplifica
+√8 + √2   = 2√2 + √2 = 3√2  ✓</div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-label" style="color:var(--I)">Sorpresas matemáticas</div>
+      <h4>Irracional × irracional puede ser racional</h4>
+      <p>Resultado contraintuitivo: dos irracionales pueden cancelarse.</p>
+      <div class="formula-block" style="color:var(--I); border-left-color:var(--I)">√2 × √2 = 2         (¡natural!)
+π + (−π) = 0         (¡entero!)
+√2 × √8  = √16 = 4</div>
+      <div class="info-box" style="background:rgba(232,160,32,0.08); border-left-color:var(--N); color:var(--N)">
+        No asumas que irracional + irracional = irracional.
+      </div>
+      <div class="acc">
+        <button class="acc-btn" onclick="toggleAcc(this)">π y e — irracionales trascendentes <span class="acc-chevron">&#8964;</span></button>
+        <div class="acc-body">Además de irracionales, π y e son "trascendentes":
+no son raíz de ningún polinomio con coeficientes
+enteros. Los más famosos de la matemática.</div>
+      </div>
+    </div>
+  </div>
+</div>
+</section>
+
+<!-- ═══ REALES ═══ -->
+<section class="set-section" id="reales">
+<div class="container">
+  <div class="set-header">
+    <div class="set-icon-wrap" style="background:var(--Rl); border-color:var(--Rb)">
+      <span class="set-icon" style="color:var(--R)">ℝ</span>
+    </div>
+    <div>
+      <div class="set-number">04 — Reales</div>
+      <h2 class="set-title">Números Reales</h2>
+      <p class="set-subtitle">La unión de racionales e irracionales. Cubren toda la recta numérica sin dejar ningún hueco.</p>
+    </div>
+  </div>
+
+  <div class="content-grid">
+    <div class="card">
+      <div class="card-label" style="color:var(--R)">Definición</div>
+      <h4>El conjunto ℝ</h4>
+      <p>ℝ = ℚ ∪ 𝕀. Representa todos los puntos de la recta numérica.</p>
+      <div class="formula-block" style="color:var(--R); border-left-color:var(--R)">ℕ ⊂ ℤ ⊂ ℚ ⊂ ℝ
+         𝕀 ⊂ ℝ</div>
+      <div class="info-box" style="background:var(--Rl); border-left-color:var(--R); color:var(--R)">
+        Suma, resta, producto y división (sin ÷0) siempre dan un real.
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-label" style="color:var(--R)">Propiedad fundamental</div>
+      <h4>Completitud de ℝ</h4>
+      <p>ℝ no tiene huecos. Entre dos reales cualesquiera siempre hay otro real.</p>
+      <div class="acc">
+        <button class="acc-btn" onclick="toggleAcc(this)">Intervalos en ℝ <span class="acc-chevron">&#8964;</span></button>
+        <div class="acc-body">[a, b]  → cerrado: incluye a y b
+(a, b)  → abierto: excluye a y b
+[a, b)  → semiabierto
+(−∞, b] → todos los reales ≤ b
+[a, +∞) → todos los reales ≥ a
+
+Ejemplo: x ≥ 3  →  [3, +∞)</div>
+      </div>
+      <div class="acc">
+        <button class="acc-btn" onclick="toggleAcc(this)">¿Y después de ℝ? <span class="acc-chevron">&#8964;</span></button>
+        <div class="acc-body">√(−1) no existe en ℝ. Para eso se crean
+los números complejos ℂ, con la unidad
+imaginaria i. Es el siguiente paso.</div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-label" style="color:var(--R)">Tabla resumen</div>
+      <h4>¿A qué conjunto pertenece?</h4>
+      <div style="overflow-x:auto; margin-top:0.75rem">
+        <table class="inc-table" style="font-size:0.78rem">
+          <thead>
+            <tr>
+              <th style="text-align:left">Número</th>
+              <th style="color:var(--N)">ℕ</th>
+              <th style="color:var(--Z)">ℤ</th>
+              <th style="color:var(--Q)">ℚ</th>
+              <th style="color:var(--R)">ℝ</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>5</td><td class="yes">✓</td><td class="yes">✓</td><td class="yes">✓</td><td class="yes">✓</td></tr>
+            <tr><td>−3</td><td class="no">✗</td><td class="yes">✓</td><td class="yes">✓</td><td class="yes">✓</td></tr>
+            <tr><td>3/4</td><td class="no">✗</td><td class="no">✗</td><td class="yes">✓</td><td class="yes">✓</td></tr>
+            <tr><td>√2</td><td class="no">✗</td><td class="no">✗</td><td class="no">✗</td><td class="yes">✓</td></tr>
+            <tr><td>π</td><td class="no">✗</td><td class="no">✗</td><td class="no">✗</td><td class="yes">✓</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
+</section>
+
+<!-- ═══ DIAGRAMA ═══ -->
+<section class="venn-section" id="diagrama">
+<div class="container">
+  <div class="section-eyebrow">Inclusión de conjuntos</div>
+  <div class="venn-wrap">
+    <div class="venn-diagram">
+      <div class="nesting" role="img" aria-label="Diagrama de inclusión de conjuntos numéricos">
+        <div class="ring r-R" title="Reales ℝ">
+          <div class="ring-label" style="color:var(--R)">ℝ<br>Reales</div>
+        </div>
+        <div class="ring r-I" title="Irracionales 𝕀">
+          <div class="ring-label" style="color:var(--I); text-align:center; font-size:10px">𝕀</div>
+        </div>
+        <div class="ring r-Q" title="Racionales ℚ">
+          <div class="ring-label" style="color:var(--Q)">ℚ<br>Rac.</div>
+        </div>
+        <div class="ring r-Z" title="Enteros ℤ">
+          <div class="ring-label" style="color:var(--Z)">ℤ</div>
+        </div>
+        <div class="ring r-N" title="Naturales ℕ">
+          <div class="ring-label" style="color:var(--N); text-align:center">ℕ</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="venn-legend">
+      <h3>De menor a mayor</h3>
+      <p>Cada conjunto está "dentro" del siguiente. Los irracionales son la parte de ℝ que está fuera de ℚ.</p>
+      <div class="legend-item">
+        <div class="legend-dot" style="background:var(--N)"></div>
+        <span class="legend-sym" style="color:var(--N)">ℕ</span>
+        <span class="legend-desc">Naturales: 0, 1, 2, 3, …</span>
+      </div>
+      <div class="legend-item">
+        <div class="legend-dot" style="background:var(--Z)"></div>
+        <span class="legend-sym" style="color:var(--Z)">ℤ</span>
+        <span class="legend-desc">Enteros: …, −2, −1, 0, 1, 2, …</span>
+      </div>
+      <div class="legend-item">
+        <div class="legend-dot" style="background:var(--Q)"></div>
+        <span class="legend-sym" style="color:var(--Q)">ℚ</span>
+        <span class="legend-desc">Racionales: fracciones y decimales periódicos</span>
+      </div>
+      <div class="legend-item">
+        <div class="legend-dot" style="background:var(--I)"></div>
+        <span class="legend-sym" style="color:var(--I)">𝕀</span>
+        <span class="legend-desc">Irracionales: √2, π, e, √3, …</span>
+      </div>
+      <div class="legend-item">
+        <div class="legend-dot" style="background:var(--R)"></div>
+        <span class="legend-sym" style="color:var(--R)">ℝ</span>
+        <span class="legend-desc">Reales: todo lo anterior unido</span>
+      </div>
+      <div class="info-box" style="background:var(--bg3); border-left-color:var(--Z); color:var(--text2); margin-top:1rem">
+        <strong style="color:var(--text)">Cadena:</strong> ℕ ⊂ ℤ ⊂ ℚ ⊂ ℝ y 𝕀 ⊂ ℝ.<br>ℚ ∩ 𝕀 = ∅ (no comparten ningún elemento).
+      </div>
+    </div>
+  </div>
+
+  <div style="overflow-x:auto; margin-top:1.5rem">
+    <table class="inc-table">
+      <thead>
+        <tr>
+          <th style="text-align:left">Operación</th>
+          <th style="color:var(--N)">ℕ</th>
+          <th style="color:var(--Z)">ℤ</th>
+          <th style="color:var(--Q)">ℚ</th>
+          <th style="color:var(--R)">ℝ</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>Suma</td><td class="yes">✓</td><td class="yes">✓</td><td class="yes">✓</td><td class="yes">✓</td></tr>
+        <tr><td>Resta</td><td class="no">±*</td><td class="yes">✓</td><td class="yes">✓</td><td class="yes">✓</td></tr>
+        <tr><td>Multiplicación</td><td class="yes">✓</td><td class="yes">✓</td><td class="yes">✓</td><td class="yes">✓</td></tr>
+        <tr><td>División</td><td class="no">±*</td><td class="no">±*</td><td class="yes">✓**</td><td class="yes">✓**</td></tr>
+        <tr><td>Raíz cuadrada (≥0)</td><td class="no">±*</td><td class="no">±*</td><td class="no">±*</td><td class="yes">✓</td></tr>
+      </tbody>
+    </table>
+    <p style="font-size:0.75rem; color:var(--text3); margin-top:8px; font-family:var(--mono)">* Depende de los valores. ** Excepto divisor = 0.</p>
+  </div>
+</div>
+</section>
+
+<!-- ═══ EJERCICIOS ═══ -->
+<section class="quiz-section" id="ejercicios">
+<div class="container">
+  <div class="quiz-header">
+    <div class="quiz-icon">?</div>
+    <div>
+      <h2>Ejercicios interactivos</h2>
+      <p>25 preguntas: 5 de Naturales, 10 de Enteros, 10 de Racionales. Filtra por conjunto o hazlos todos.</p>
+    </div>
+  </div>
+
+  <div style="display:flex;gap:8px;flex-wrap:wrap;margin-bottom:1.25rem">
+    <button class="q-filter active" data-set="ALL" onclick="setFilter('ALL',this)">Todos (25)</button>
+    <button class="q-filter" data-set="N" onclick="setFilter('N',this)">ℕ Naturales (5)</button>
+    <button class="q-filter" data-set="Z" onclick="setFilter('Z',this)">ℤ Enteros (10)</button>
+    <button class="q-filter" data-set="Q" onclick="setFilter('Q',this)">ℚ Racionales (10)</button>
+  </div>
+  <div class="q-wrap">
+    <div class="q-progress" id="qProgress"></div>
+    <div id="qCards"></div>
+    <div class="q-result" id="qResult">
+      <div class="q-result-big" id="qBig"></div>
+      <p class="q-result-msg" id="qMsg"></p>
+      <button class="btn-retry" onclick="resetQuiz()">Repetir ejercicios</button>
+    </div>
+  </div>
+</div>
+</section>
+
+<footer>
+  <p>Conjuntos Numéricos &nbsp;—&nbsp; Matemáticas de Secundaria &nbsp;|&nbsp; Plataforma educativa interactiva</p>
+</footer>
+
+<div class="progress-widget" aria-live="polite">
+  <div class="pw-label">Respuestas correctas</div>
+  <div class="pw-val"><span id="pwOk">0</span> / <span id="pwTotal">0</span></div>
+  <div class="pw-sub">del quiz</div>
+</div>
+<script src="./main.js"></script>
+</body>
+</html>
